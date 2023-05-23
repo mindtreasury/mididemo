@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "tone": "^14.7.77"
+  }
+}
