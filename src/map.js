@@ -29,6 +29,7 @@ let satXYZ = null
 let urXYZ = null
 let nepXYZ = null
 let plutXYZ = null
+let loader = null
 
 function init() {
     renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -36,7 +37,7 @@ function init() {
     renderer.autoClearColor = false;
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    renderer.getMaxAnisotropy();
+    renderer.capabilities.getMaxAnisotropy();
     document.body.appendChild(renderer.domElement);
     camera = new THREE.PerspectiveCamera(
         75,
@@ -168,8 +169,8 @@ function init() {
     light.shadow.camera.near = 0.1;
     light.shadow.camera.far = 10000;
 
-    const loader = new THREE.CubeTextureLoader();
-    const texture = loader.load([
+    const ctLoader = new THREE.CubeTextureLoader();
+    const texture = ctLoader.load([
         "https://sun9-30.userapi.com/c850608/v850608287/cfaad/0nK6n9jameQ.jpg",
         "https://sun9-31.userapi.com/c204828/v204828287/817ed/RlTe2zejDe8.jpg",
         "https://sun9-7.userapi.com/c205716/v205716287/82143/YcQBbbEjsJk.jpg",
