@@ -3,6 +3,7 @@
     "parcel": "^2.8.3"
   },
   "dependencies": {
+    "three": "^0.152.2",
     "tone": "^14.7.77"
   }
 }

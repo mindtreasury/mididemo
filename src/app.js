@@ -1,5 +1,6 @@
 // Include Tone.js
 import * as Tone from 'tone';
+import { displayMap } from './map';
 
 // Check if WebMIDI is supported
 if (navigator.requestMIDIAccess) {
@@ -51,15 +52,16 @@ function getMIDIMessage(message) {
 const synth = new Tone.PolySynth(Tone.Synth).toDestination();
 
 function noteOn(note, velocity) {
-    synth.triggerAttack(Tone.Midi(note), Tone.now(), velocity/5);
+    synth.triggerAttack(Tone.Midi(note), Tone.now(), velocity / 5);
 }
 
 function noteOff(note) {
     synth.triggerRelease(Tone.Midi(note), Tone.now());
 }
 
-document.getElementById("start_btn").addEventListener("click", function () {
+document.getElementById("start_btn").addEventListener("click", function() {
     startmidi()
     document.getElementById("start_btn").remove()
+    displayMap()
 });
 
